@@ -14,4 +14,8 @@ Utilisez GitKraken pour toutes les opérations concernant le projet. Quelques co
 
 3°) Quand vous avez terminez, n'oubliez pas de cliquer sur "Push" en haut pour envoyer vos modifications, sinon elles resteront en local !
 
+<<<<<<< HEAD
 Master
+=======
+Test 2
+>>>>>>> Test3
