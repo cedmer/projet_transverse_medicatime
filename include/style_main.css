@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
+#table_preview table,#table_preview tr, #table_preview td{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#table_preview td{
+    width: 20px;
+    height: 20px;
+}
