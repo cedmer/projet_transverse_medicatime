@@ -27,7 +27,7 @@
   <component name="ProjectId" id="1YOZfXbF9qi36K13VzQNSCHaQ5O" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../APU/Web_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -60,7 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1582816247518</updated>
       <workItem from="1582816248653" duration="11633000" />
-      <workItem from="1583160732068" duration="6303000" />
+      <workItem from="1583160732068" duration="6783000" />
+      <workItem from="1583184937318" duration="1230000" />
     </task>
     <servers />
   </component>
@@ -72,7 +73,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

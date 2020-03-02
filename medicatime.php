@@ -28,102 +28,16 @@
         <?php
             tab_preview();
         ?>
-<!--        <tr>-->
-<!--            <td></td>-->
-<!--            <td>Lundi</td>-->
-<!--            <td>mardi</td>-->
-<!--            <td>Mercredi</td>-->
-<!--            <td>Jeudi</td>-->
-<!--            <td>Vendredi</td>-->
-<!--            <td>Samedi</td>-->
-<!--            <td>Dimanche</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>8h</td>-->
-<!--            <td id="lundi_8"></td>-->
-<!--            <td id="mardi_8"></td>-->
-<!--            <td id="mercredi_8"></td>-->
-<!--            <td id="jeudi_8"></td>-->
-<!--            <td id="vendredi_8"></td>-->
-<!--            <td id="samedi_8"></td>-->
-<!--            <td id="dimanche_8"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>10h</td>-->
-<!--            <td id="lundi_10"></td>-->
-<!--            <td id="mardi_10"></td>-->
-<!--            <td id="mercredi_10"></td>-->
-<!--            <td id="jeudi_10"></td>-->
-<!--            <td id="vendredi_10"></td>-->
-<!--            <td id="samedi_10"></td>-->
-<!--            <td id="dimanche_10"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>12h</td>-->
-<!--            <td id="lundi_12"></td>-->
-<!--            <td id="mardi_12"></td>-->
-<!--            <td id="mercredi_12"></td>-->
-<!--            <td id="jeudi_12"></td>-->
-<!--            <td id="vendredi_12"></td>-->
-<!--            <td id="samedi_12"></td>-->
-<!--            <td id="dimanche_12"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>14h</td>-->
-<!--            <td id="lundi_14"></td>-->
-<!--            <td id="mardi_14"></td>-->
-<!--            <td id="mercredi_14"></td>-->
-<!--            <td id="jeudi_14"></td>-->
-<!--            <td id="vendredi_14"></td>-->
-<!--            <td id="samedi_14"></td>-->
-<!--            <td id="dimanche_14"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>16h</td>-->
-<!--            <td id="lundi_16"></td>-->
-<!--            <td id="mardi_16"></td>-->
-<!--            <td id="mercredi_16"></td>-->
-<!--            <td id="jeudi_16"></td>-->
-<!--            <td id="vendredi_16"></td>-->
-<!--            <td id="samedi_16"></td>-->
-<!--            <td id="dimanche_16"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>18h</td>-->
-<!--            <td id="lundi_18"></td>-->
-<!--            <td id="mardi_18"></td>-->
-<!--            <td id="mercredi_18"></td>-->
-<!--            <td id="jeudi_18"></td>-->
-<!--            <td id="vendredi_18"></td>-->
-<!--            <td id="samedi_18"></td>-->
-<!--            <td id="dimanche_18"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>20h</td>-->
-<!--            <td id="lundi_20"></td>-->
-<!--            <td id="mardi_20"></td>-->
-<!--            <td id="mercredi_20"></td>-->
-<!--            <td id="jeudi_20"></td>-->
-<!--            <td id="vendredi_20"></td>-->
-<!--            <td id="samedi_20"></td>-->
-<!--            <td id="dimanche_20"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>nuit</td>-->
-<!--            <td id="lundi_nuit"></td>-->
-<!--            <td id="mardi_nuit"></td>-->
-<!--            <td id="mercredi_nuit"></td>-->
-<!--            <td id="jeudi_nuit"></td>-->
-<!--            <td id="vendredi_nuit"></td>-->
-<!--            <td id="samedi_nuit"></td>-->
-<!--            <td id="dimanche_nuit"></td>-->
-<!--        </tr>-->
     </table>
 </div>
 
 <div id="forms">
 
+    <form method="post" action="new_table.php">
+        <input type="submit" name="new_table" value="new table">
+    </form>
     <form method="post" action="add_medic.php">
+
         <table>
             <tr>
                 <td><label>medicament</label></td>
@@ -183,6 +97,12 @@
                 <td><input type="checkbox" name="nuit_check"></td>
             </tr>
             <tr>
+                <td><input type="button" name="every_day" value="tous les jours"></td>
+                <td></td>
+                <td><input type="button" name="every_hour" value="toutes les heures"></td>
+                <td></td>
+            </tr>
+            <tr>
                 <td><input type="submit" value="add to preview" id="add_preview" name="add_preview"></td>
                 <td></td>
                 <td></td>
@@ -194,6 +114,7 @@
 
 <script src="JS/treatment_forms.js"></script>
 <script src="JS/TreeViewScript.js"></script>
+<script src="JS/all_days_hours.js"></script>
 </body>
 
 
