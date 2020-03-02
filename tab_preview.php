@@ -26,7 +26,7 @@ function tab_preview(){
             echo "<td>";
             while ($rows = mysqli_fetch_array($result)){
                 if (($rows['heure']=="$i")&&($rows['jour']=="$j")){
-                    echo $rows['medicament']."  ".$rows['dosage']."mg</br>";
+                    echo $rows['medicament']."  ".$rows['dosage']."mg <a href='remove_and_modify.php?id=".$rows['tid']."'>&timesb;</a></br>";
                 }
             }
             echo "</td>";
