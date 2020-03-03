@@ -37,7 +37,7 @@ include "tab_preview.php";
 
         <div id="forms">
 
-            <form method="post" action="new_table.php">
+            <form method="post" action="new_table.php" id="new">
                 <input type="submit" name="new_table" value="new table">
             </form>
             <form method="post" action="add_medic.php">
@@ -120,7 +120,8 @@ include "tab_preview.php";
             medic_preview();
             ?>
         </table>
-
+    <script src="JS/removerequired.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="JS/treatment_forms.js"></script>
     <script src="JS/TreeViewScript.js"></script>
     <script src="JS/all_days_hours.js"></script>

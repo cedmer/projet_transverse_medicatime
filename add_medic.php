@@ -2,8 +2,8 @@
 include("conn.php");
 
 if($_POST['add_preview']){
-    $heures = "";
-    $jours = "";
+    $heures = " ";
+    $jours = " ";
     $medic = $_POST['medic'];
     $medic_mg = $_POST['medic_mg'];
 

@@ -17,7 +17,7 @@ function tab_preview(){
                 <td class='jour'>Vendredi</td>
                 <td class='jour'>Samedi</td>
                 <td class='jour'>Dimanche</td>
-            </tr>";
+        </tr>";
 
     for ($i=8; $i<=22; $i+=2){
         echo "<tr> <td class='heures'>".$i."h</td>";
@@ -45,13 +45,15 @@ function medic_preview(){
     $result = mysqli_query($conn, $sql);
 
     while($rows = mysqli_fetch_array($result)){
-        echo "<tr>
+        echo "<tr id=\"modif\">
                 <form method=\"post\" action=\"remove_and_modify.php\">
-                    <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly></td>
-                    <td><input type='text' name='new_name_medic'></td>
+                    <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly id='ancien_medicament'></td>
+                    <td><input type='text' name='new_name_medic' required='required'></td>
                     <td><input type='submit' value='modify' name='modify'></td>
-                    <td><input type='submit' value='delete' name='delete_medic'></td>
+                    <td><input type='submit' value='delete' name='delete_medic' onClick='removeRequired(this.form)'></td>
                 </form>
             </tr>";
     }
+    echo "<div id='padding_preview'>
+    </div>";
 }
