@@ -109,6 +109,11 @@
             </tr>
         </table>
     </form>
+        <table>
+            <?php
+            medic_preview();
+            ?>
+        </table>
 
 </div>
 

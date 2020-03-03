@@ -36,3 +36,21 @@ function tab_preview(){
     }
 
 }
+
+function medic_preview(){
+
+    include("conn.php");
+
+    $sql = "SELECT DISTINCT `medicament` FROM `tableau`";
+    $result = mysqli_query($conn, $sql);
+
+    while($rows = mysqli_fetch_array($result)){
+        echo "<tr>
+                <form method=\"post\" action=\"remove_and_modify.php\">
+                    <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly></td>
+                    <td><input type='text' name='new_name_medic'></td>
+                    <td><input type='submit' value='modify' name='modify'></td>
+                </form>
+            </tr>";
+    }
+}
