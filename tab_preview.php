@@ -50,6 +50,7 @@ function medic_preview(){
                     <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly></td>
                     <td><input type='text' name='new_name_medic'></td>
                     <td><input type='submit' value='modify' name='modify'></td>
+                    <td><input type='submit' value='delete' name='delete_medic'></td>
                 </form>
             </tr>";
     }

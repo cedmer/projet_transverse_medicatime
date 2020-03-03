@@ -113,69 +113,8 @@ include "tab_preview.php";
                     </tr>
                 </table>
             </form>
+        </div>
 
-            </tr>
-            <tr>
-                <td><label>lundi</label></td>
-                <td><input type="checkbox" name="1_jour"></td>
-                <td><label>8h</label></td>
-                <td><input type="checkbox" name="8_check"></td>
-            </tr>
-            <tr>
-                <td><label>mardi</label></td>
-                <td><input type="checkbox" name="2_jour"></td>
-                <td><label>10h</label></td>
-                <td><input type="checkbox" name="10_check"></td>
-            </tr>
-            <tr>
-                <td><label>mercredi</label></td>
-                <td><input type="checkbox" name="3_jour"></td>
-                <td><label>12h</label></td>
-                <td><input type="checkbox" name="12_check"></td>
-            </tr>
-            <tr>
-                <td><label>jeudi</label></td>
-                <td><input type="checkbox" name="4_jour"></td>
-                <td><label>14h</label></td>
-                <td><input type="checkbox" name="14_check"></td>
-            </tr>
-            <tr>
-                <td><label>vendredi</label></td>
-                <td><input type="checkbox" name="5_jour"></td>
-                <td><label>16h</label></td>
-                <td><input type="checkbox" name="16_check"></td>
-            </tr>
-            <tr>
-                <td><label>samedi</label></td>
-                <td><input type="checkbox" name="6_jour"></td>
-                <td><label>18h</label></td>
-                <td><input type="checkbox" name="18_check"></td>
-            </tr>
-            <tr>
-                <td><label>dimanche</label></td>
-                <td><input type="checkbox" name="7_jour"></td>
-                <td><label>20h</label></td>
-                <td><input type="checkbox" name="20_check"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><label>nuit</label></td>
-                <td><input type="checkbox" name="nuit_check"></td>
-            </tr>
-            <tr>
-                <td><input type="button" name="every_day" value="tous les jours"></td>
-                <td></td>
-                <td><input type="button" name="every_hour" value="toutes les heures"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="add to preview" id="add_preview" name="add_preview"></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-    </form>
         <table>
             <?php
             medic_preview();

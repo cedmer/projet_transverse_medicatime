@@ -18,7 +18,24 @@ if ($_POST['modify']){
         }
     }
 
-    echo $old_name;
+    mysqli_close($conn);
+
+    die("<script>window.location.href= 'medicatime.php'</script>");
+
+}elseif ($_POST['delete_medic']){
+    $old_name = strval($_POST['to_modify']);
+
+    $sql = "SELECT * FROM `tableau` WHERE `medicament` LIKE '%".$old_name."%'";
+    $result = mysqli_query($conn, $sql);
+
+    while ($rows = mysqli_fetch_array($result)){
+        $id = $rows['tid'];
+        $sql = "DELETE FROM `tableau` WHERE `tableau`.`tid` =  $id";
+        if(!mysqli_query($conn, $sql)){
+            die("Error: ".mysqli_error($conn));
+        }
+    }
+
     mysqli_close($conn);
 
     die("<script>window.location.href= 'medicatime.php'</script>");
