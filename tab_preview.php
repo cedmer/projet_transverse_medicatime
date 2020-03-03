@@ -9,24 +9,24 @@ function tab_preview(){
     $result = mysqli_query($conn, $sql);
 
     echo "<tr>
-                <td></td>
-                <td>Lundi</td>
-                <td>mardi</td>
-                <td>Mercredi</td>
-                <td>Jeudi</td>
-                <td>Vendredi</td>
-                <td>Samedi</td>
-                <td>Dimanche</td>
+                <td class='jour'></td>
+                <td class='jour'>Lundi</td>
+                <td class='jour'>mardi</td>
+                <td class='jour'>Mercredi</td>
+                <td class='jour'>Jeudi</td>
+                <td class='jour'>Vendredi</td>
+                <td class='jour'>Samedi</td>
+                <td class='jour'>Dimanche</td>
             </tr>";
 
     for ($i=8; $i<=22; $i+=2){
-        echo "<tr> <td>".$i."h</td>";
+        echo "<tr> <td class='heures'>".$i."h</td>";
 
         for ($j=1; $j<=7; $j++){
-            echo "<td>";
+            echo "<td class='champs'>";
             while ($rows = mysqli_fetch_array($result)){
                 if (($rows['heure']=="$i")&&($rows['jour']=="$j")){
-                    echo $rows['medicament']."  ".$rows['dosage']."mg <a href='remove_and_modify.php?id=".$rows['tid']."'>&timesb;</a></br>";
+                    echo $rows['medicament']."  ".$rows['dosage']."mg <a href='remove_and_modify.php?id=".$rows['tid']."' class='close'></a></br>";
                 }
             }
             echo "</td>";
