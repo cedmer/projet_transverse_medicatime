@@ -1,0 +1,62 @@
+#table_preview table ,#table_preview td, #table_preview tr{
+    margin: 0 auto;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+#table_preview table{
+    min-width: 1000px;
+}
+#time_table_container{
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+
+}
+
+.jour,.heures{
+    font-family: 'Roboto', sans-serif;
+    background: #9675ce ;
+    color: #FFF;
+    font-size: 14px ;
+    font-weight: 500;
+    
+}
+.jour {
+    padding: 15px;
+}
+.champs{
+   padding-right: 15px;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.close {
+    position: absolute;
+    opacity: 0.3;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    content: ' ';
+    height: 10px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  
+
