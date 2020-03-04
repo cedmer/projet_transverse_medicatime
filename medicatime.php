@@ -8,7 +8,7 @@ include "tab_preview.php";
 <head>
     <meta charset="utf-8" />
     <title>Medicatime</title>
-    <link rel="icon" type="image/png" href="images/logo_medicatime.png" />
+    <link rel="icon" type="image/png" href="images/icon_medicatime.png" />
     <link href="include/style.css" rel="stylesheet" type="text/css" />
     <link href="include/style_main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
@@ -34,7 +34,11 @@ include "tab_preview.php";
             </table>
         </div>
     </div>
-
+        <div class="button_pdf">
+            <form action="pdf_generator.php" method="post">
+                <input type="submit" value="convertir en pdf" id="pdf">
+            </form>
+        </div>  
         <div id="forms">
 
             <form method="post" action="new_table.php" id="new">
@@ -48,48 +52,48 @@ include "tab_preview.php";
                         <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic"></td>
                     </tr>
                     <tr>
-                        <td><label>mg</label></td>
+                        <td class="mg_form"><label>mg</label></td>
                         <td><input type="text" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
 
                     </tr>
                     <tr>
-                        <td><label>lundi</label></td>
+                        <td class="jour_form"><label>lundi</label></td>
                         <td><input type="checkbox" name="1_jour"></td>
                         <td><label>8h</label></td>
                         <td><input type="checkbox" name="8_check"></td>
                     </tr>
                     <tr>
-                        <td><label>mardi</label></td>
+                        <td class="jour_form"><label>mardi</label></td>
                         <td><input type="checkbox" name="2_jour"></td>
                         <td><label>10h</label></td>
                         <td><input type="checkbox" name="10_check"></td>
                     </tr>
                     <tr>
-                        <td><label>mercredi</label></td>
+                        <td class="jour_form"><label>mercredi</label></td>
                         <td><input type="checkbox" name="3_jour"></td>
                         <td><label>12h</label></td>
                         <td><input type="checkbox" name="12_check"></td>
                     </tr>
                     <tr>
-                        <td><label>jeudi</label></td>
+                        <td class="jour_form"><label>jeudi</label></td>
                         <td><input type="checkbox" name="4_jour"></td>
                         <td><label>14h</label></td>
                         <td><input type="checkbox" name="14_check"></td>
                     </tr>
                     <tr>
-                        <td><label>vendredi</label></td>
+                        <td class="jour_form"><label>vendredi</label></td>
                         <td><input type="checkbox" name="5_jour"></td>
                         <td><label>16h</label></td>
                         <td><input type="checkbox" name="16_check"></td>
                     </tr>
                     <tr>
-                        <td><label>samedi</label></td>
+                        <td class="jour_form"><label>samedi</label></td>
                         <td><input type="checkbox" name="6_jour"></td>
                         <td><label>18h</label></td>
                         <td><input type="checkbox" name="18_check"></td>
                     </tr>
                     <tr>
-                        <td><label>dimanche</label></td>
+                        <td class="jour_form"><label>dimanche</label></td>
                         <td><input type="checkbox" name="7_jour"></td>
                         <td><label>20h</label></td>
                         <td><input type="checkbox" name="20_check"></td>
@@ -114,16 +118,13 @@ include "tab_preview.php";
                 </table>
             </form>
         </div>
-
         <table id="table_medic">
             <?php
             medic_preview();
             ?>
         </table>
 
-    <form action="pdf_generator.php" method="post">
-        <input type="submit" value="pdf">
-    </form>
+
     <script src="JS/removerequired.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="JS/treatment_forms.js"></script>
