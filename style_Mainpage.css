@@ -56,15 +56,34 @@ h1{
     margin-left:115%;
     text-align: center;
 }
-#ancien_medicament{
+.ancien_medicament{
     pointer-events:none;
 }
 
 #padding_preview{
     padding-top: 10px;
+    margin-bottom: 50px;
 }
 
+#new_table_btn{
+    background-color: deepskyblue;
+}
 
+.modify_btn{
+    background-color: deepskyblue;
+}
+
+#new_table_btn:hover, .modify_btn:hover {
+    background-color: #00a8d6;
+}
+
+#add_preview{
+    background-color: limegreen;
+}
+
+#add_preview:hover{
+    background-color: #279c27;
+}
 /* for the form */
 
 /* for the cross */
@@ -95,7 +114,6 @@ h1{
 /* button */
 input[type=button],input[type=submit]{
     cursor: pointer;
-    background: #ed2553;
     border-radius: 3px;
     padding: 5px 10px;
     color: #ffffff;
@@ -113,5 +131,14 @@ input[type=text]{
 input[type=checkbox]{
     height: 15px;
     width: 15px;
-    background: #e6e6e6;
+    border: none;
+}
+
+.red_btn{
+    background: #ed2553;
+}
+
+#table_medic{
+    margin-bottom: 50px;
+    margin-top: 50px;
 }

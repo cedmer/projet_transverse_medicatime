@@ -47,13 +47,11 @@ function medic_preview(){
     while($rows = mysqli_fetch_array($result)){
         echo "<tr id=\"modif\">
                 <form method=\"post\" action=\"remove_and_modify.php\">
-                    <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly id='ancien_medicament'></td>
+                    <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly class='ancien_medicament'></td>
                     <td><input type='text' name='new_name_medic' required='required'></td>
-                    <td><input type='submit' value='modify' name='modify'></td>
-                    <td><input type='submit' value='delete' name='delete_medic' onClick='removeRequired(this.form)'></td>
+                    <td><input type='submit' value='modify' name='modify' class='modify_btn'></td>
+                    <td><input type='submit' value='delete' name='delete_medic' class='red_btn' onClick='removeRequired(this.form)'></td>
                 </form>
             </tr>";
     }
-    echo "<div id='padding_preview'>
-    </div>";
 }

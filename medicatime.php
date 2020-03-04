@@ -38,7 +38,7 @@ include "tab_preview.php";
         <div id="forms">
 
             <form method="post" action="new_table.php" id="new">
-                <input type="submit" name="new_table" value="new table">
+                <input type="submit" name="new_table" value="new table" id="new_table_btn">
             </form>
             <form method="post" action="add_medic.php">
             
@@ -101,9 +101,9 @@ include "tab_preview.php";
                         <td><input type="checkbox" name="nuit_check"></td>
                     </tr>
                     <tr>
-                        <td><input type="button" name="every_day" value="tous les jours"></td>
+                        <td><input type="button" name="every_day" value="tous les jours" class="red_btn"></td>
                         <td></td>
-                        <td><input type="button" name="every_hour" value="toutes les heures"></td>
+                        <td><input type="button" name="every_hour" value="toutes les heures" class="red_btn"></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -115,7 +115,7 @@ include "tab_preview.php";
             </form>
         </div>
 
-        <table>
+        <table id="table_medic">
             <?php
             medic_preview();
             ?>
