@@ -120,6 +120,10 @@ include "tab_preview.php";
             medic_preview();
             ?>
         </table>
+
+    <form action="pdf_generator.php" method="post">
+        <input type="submit" value="pdf">
+    </form>
     <script src="JS/removerequired.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="JS/treatment_forms.js"></script>
