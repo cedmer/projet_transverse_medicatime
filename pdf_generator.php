@@ -26,7 +26,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_mardi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==2)){
-            $cell_mardi.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_mardi.=$rows['medicament']." ".$rows['dosage']."mg \n";
         }
     }
     mysqli_data_seek($result, 0);
