@@ -42,11 +42,35 @@ h1{
 
 
 /* for the form */
+.button_pdf{
+    margin-left: 67.5%;
+    top: 150px;
+}
+#pdf{
+    background-color: #ed2553;
+    position: relative;
+    top: 7px;
+}
+#pdf:hover{
+    background-color:#bd1d42 ;
+}
 
 #forms{
     display: inline-block;
-    margin-left:35%;
+    margin-left:32%;
     text-align: center;
+    border: 1px solid #d4d4d4;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: -20px;
+}
+.jour_form{
+    text-align: left;
+}
+.mg_form{
+    text-align: right;
+    padding-right: 9px;
 }
 #new{
     padding-bottom: 10px;
@@ -60,16 +84,8 @@ h1{
     pointer-events:none;
 }
 
-#padding_preview{
-    padding-top: 10px;
-    margin-bottom: 50px;
-}
 
-#new_table_btn{
-    background-color: deepskyblue;
-}
-
-.modify_btn{
+#new_table_btn,.modify_btn{
     background-color: deepskyblue;
 }
 
@@ -84,6 +100,12 @@ h1{
 #add_preview:hover{
     background-color: #279c27;
 }
+
+#table_medic{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
 /* for the form */
 
 /* for the cross */
@@ -137,8 +159,10 @@ input[type=checkbox]{
 .red_btn{
     background: #ed2553;
 }
-
-#table_medic{
-    margin-bottom: 50px;
-    margin-top: 50px;
+.red_btn:hover{
+    background-color:#bd1d42 ;
+}
+input:focus{
+    border-color: black;
+    outline: none;
 }
