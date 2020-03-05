@@ -11,7 +11,7 @@ catch(Exception $e)
 
 <div>
     <a href="medicatime.php">
-        <img class="hvr-bob"  id="logo" src="images/logo_medicatime.png" >
+        <img class="hvr-bob"  id="logo" src="../../images/logo_medicatime.png" >
     </a>
 </div>
 

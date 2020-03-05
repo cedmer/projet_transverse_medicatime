@@ -2,7 +2,7 @@
 
 function tab_preview(){
 
-    include("conn.php");
+    include("library/conn.php");
 
 
     $sql = "SELECT * FROM `tableau`";
@@ -39,15 +39,14 @@ function tab_preview(){
 
 function medic_preview(){
 
-    include("conn.php");
+    include("library/conn.php");
 
     $sql = "SELECT DISTINCT `medicament` FROM `tableau`";
     $result = mysqli_query($conn, $sql);
 
     while($rows = mysqli_fetch_array($result)){
-        echo "<tr id=\"modif\">
-                <form method=\"post\" action=\"remove_and_modify.php\">
-                    <td><input type='text' value='".$rows['medicament']."' name='to_modify' readonly class='ancien_medicament'></td>
+        echo ">
+                    <td><input type='text' value='" .$rows['medicament']."' name='to_modify' readonly class='ancien_medicament'></td>
                     <td><input type='text' name='new_name_medic' required='required'></td>
                     <td><input type='submit' value='modify' name='modify' class='modify_btn'></td>
                     <td><input type='submit' value='delete' name='delete_medic' class='red_btn' onClick='removeRequired(this.form)'></td>

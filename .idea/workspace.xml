@@ -32,6 +32,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\Projet-Transverse-S6\include\PHP\library" />
+      <recent name="D:\xampp\htdocs\Projet-Transverse-S6\include\PHP" />
+      <recent name="D:\xampp\htdocs\Projet-Transverse-S6\include\CSS" />
+      <recent name="D:\xampp\htdocs\Projet-Transverse-S6\JS" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\Medicatime\include" />
       <recent name="D:\xampp\htdocs\Medicatime\JS" />
@@ -66,7 +72,9 @@
       <workItem from="1583220302762" duration="4728000" />
       <workItem from="1583226532772" duration="2857000" />
       <workItem from="1583305069229" duration="4003000" />
-      <workItem from="1583324696697" duration="7316000" />
+      <workItem from="1583324696697" duration="7886000" />
+      <workItem from="1583391217464" duration="607000" />
+      <workItem from="1583407399984" duration="3788000" />
     </task>
     <servers />
   </component>
