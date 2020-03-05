@@ -7,13 +7,13 @@
 
 <div class="middiv">
     <a class="hvr-bob" href="http://facebook.com">
-        <img class="icon" src="Images/icon-facebook.png" >
+        <img class="icon" src="../../Images/icon-facebook.png" >
     </a>
     <a class="hvr-bob" href="http://twitter.com">
-        <img class="icon" src="Images/icon-twitter.png" >
+        <img class="icon" src="../../Images/icon-twitter.png" >
     </a>
     <a class="hvr-bob" href="http://instagram.com">
-        <img class="icon" src="Images/icon-instagram.png" >
+        <img class="icon" src="../../Images/icon-instagram.png" >
     </a>
 </div>
 

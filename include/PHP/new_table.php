@@ -1,6 +1,6 @@
 <?php
 
-include("conn.php");
+include("library/conn.php");
 
 if ($_POST['new_table']) {
     $sql = "TRUNCATE TABLE tableau";

@@ -1,11 +1,12 @@
 <?php
-include("conn.php");
+include("library/conn.php");
 
 if($_POST['add_preview']){
     $heures = " ";
     $jours = " ";
     $medic = $_POST['medic'];
     $medic_mg = $_POST['medic_mg'];
+
 
     for ($i=8; $i<=22; $i+=2){
 

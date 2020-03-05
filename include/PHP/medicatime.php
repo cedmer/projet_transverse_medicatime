@@ -8,17 +8,17 @@ include "tab_preview.php";
 <head>
     <meta charset="utf-8" />
     <title>Medicatime</title>
-    <link rel="icon" type="image/png" href="images/logo_medicatime.png" />
-    <link href="include/style.css" rel="stylesheet" type="text/css" />
-    <link href="include/style_main.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="../../images/logo_medicatime.png" />
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/style_main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_Mainpage.css">
+    <link rel="stylesheet" href="../CSS/style_Mainpage.css">
 </head>
 
 
 
 <header>
-    <?php include("include/header.php"); ?>
+    <?php include("../header.php"); ?>
 </header>
 
 
@@ -45,11 +45,11 @@ include "tab_preview.php";
                 <table>
                     <tr>
                         <td><label>medicament</label></td>
-                        <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic"></td>
+                        <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*"></td>
                     </tr>
                     <tr>
                         <td><label>mg</label></td>
-                        <td><input type="text" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
+                        <td><input type="number" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
 
                     </tr>
                     <tr>
@@ -124,16 +124,16 @@ include "tab_preview.php";
     <form action="pdf_generator.php" method="post">
         <input type="submit" value="pdf">
     </form>
-    <script src="JS/removerequired.js"></script>
+    <script src="../../JS/removerequired.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="JS/treatment_forms.js"></script>
     <script src="JS/TreeViewScript.js"></script>
-    <script src="JS/all_days_hours.js"></script>
+    <script src="../../JS/all_days_hours.js"></script>
 </body>
 
 
 <footer>
-    <?php include("include/footer.php"); ?>
+    <?php include("../footer.php"); ?>
 </footer>
 
 </html>

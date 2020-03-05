@@ -1,7 +1,7 @@
 <?php
 
-include ('conn.php');
-require('mc_table.php');
+include('library/conn.php');
+require('library/mc_table.php');
 
 $pdf = new PDF_MC_Table();
 $pdf->AddPage();
