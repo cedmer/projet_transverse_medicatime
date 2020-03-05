@@ -1,5 +1,8 @@
 /* for the table */
-*
+*{
+    box-sizing: border-box;
+}
+
 #table_preview table ,#table_preview td, #table_preview tr{
     margin: 0 auto;
     border: 1px solid #e5e5e5;
