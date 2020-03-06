@@ -1,6 +1,6 @@
 <?php
 
-include("conn.php");
+include("library/conn.php");
 
 if ($_POST['modify']){
     $old_name = strval($_POST['to_modify']);

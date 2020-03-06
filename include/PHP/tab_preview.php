@@ -45,7 +45,7 @@ function medic_preview(){
     $result = mysqli_query($conn, $sql);
 
     while($rows = mysqli_fetch_array($result)){
-        echo ">
+        echo "<form action='remove_and_modify.php' method='post'>
                     <td><input type='text' value='" .$rows['medicament']."' name='to_modify' readonly class='ancien_medicament'></td>
                     <td><input type='text' name='new_name_medic' required='required'></td>
                     <td><input type='submit' value='modify' name='modify' class='modify_btn'></td>

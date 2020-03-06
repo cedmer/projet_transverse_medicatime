@@ -5,8 +5,8 @@ require('library/mc_table.php');
 
 $pdf = new PDF_MC_Table();
 $pdf->AddPage();
-$pdf->SetFont('Arial', '', 14);
-$pdf->SetWidths(array(32, 32, 32, 32, 32, 32, 32, 32)); //array represente le nombre de colones et leurs dimentions
+$pdf->SetFont('Arial', '', 10);
+$pdf->SetWidths(array(12, 38, 38, 38, 38, 38, 38, 38)); //array represente le nombre de colones et leurs dimentions
 $pdf->Row(array("", "Lundi", "Mardi", "Mercredi", "Jeudi", "vendredi", "samedi", "dimanche"));
 
 $sql = "SELECT * FROM `tableau`";
@@ -18,7 +18,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_lundi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']=="1")){
-            $cell_lundi.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_lundi.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);
@@ -26,7 +26,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_mardi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==2)){
-            $cell_mardi.=$rows['medicament']." ".$rows['dosage']."mg \n";
+            $cell_mardi.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);
@@ -34,7 +34,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_mercredi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==3)){
-            $cell_mercredi.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_mercredi.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);
@@ -42,7 +42,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_jeudi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==4)){
-            $cell_jeudi.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_jeudi.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);
@@ -50,7 +50,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_vendredi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==5)){
-            $cell_vendredi.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_vendredi.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);
@@ -58,7 +58,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_samedi = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==6)){
-            $cell_samedi.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_samedi.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);
@@ -66,7 +66,7 @@ for ($i=8; $i<=22; $i+=2){
     $cell_dimanche = "";
     while ($rows = mysqli_fetch_array($result)){
         if (($rows['heure']=="$i")&&($rows['jour']==7)){
-            $cell_dimanche.=$rows['medicament']." ".$rows['dosage']."mg ";
+            $cell_dimanche.=$rows['medicament']." ".$rows['dosage']." mg \n";
         }
     }
     mysqli_data_seek($result, 0);

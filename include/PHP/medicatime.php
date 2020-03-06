@@ -125,8 +125,6 @@ include "tab_preview.php";
     </form>
     <script src="../../JS/removerequired.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script src="JS/treatment_forms.js"></script>
-    <script src="JS/TreeViewScript.js"></script>
     <script src="../../JS/all_days_hours.js"></script>
 </body>
 

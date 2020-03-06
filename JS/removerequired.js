@@ -1,7 +1,7 @@
 function removeRequired(form){
-    // $.each(form, function(key, value) {
+    $.each(form, function(key, value) {
         if ( value.hasAttribute("required")){
             value.removeAttribute("required");
         }
-    // });
+    });
 }
