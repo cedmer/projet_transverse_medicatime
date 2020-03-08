@@ -45,16 +45,28 @@ h1{
 
 
 /* for the form */
-.button_pdf{
+.button_pdf_1{
     margin-left: 67.5%;
     top: 150px;
 }
-#pdf{
+#pdf_1{
     background-color: #ed2553;
     position: relative;
     top: 7px;
 }
-#pdf:hover{
+#pdf_1:hover{
+    background-color:#bd1d42 ;
+}
+.button_pdf_2{
+    text-align: center;
+    top: 150px;
+    margin-bottom: 40px;
+}
+#pdf_2{
+    background-color: #ed2553;
+    position: relative;
+}
+#pdf_2:hover{
     background-color:#bd1d42 ;
 }
 
@@ -105,8 +117,9 @@ h1{
 }
 
 #table_medic{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 40px;
+    margin-left: 35.5%;
 }
 
 /* for the form */
