@@ -44,13 +44,15 @@ function medic_preview(){
     $sql = "SELECT DISTINCT `medicament` FROM `tableau`";
     $result = mysqli_query($conn, $sql);
 
-    while($rows = mysqli_fetch_array($result)){
-        echo "<form action='remove_and_modify.php' method='post'>
-                    <td><input type='text' value='" .$rows['medicament']."' name='to_modify' readonly class='ancien_medicament'></td>
+    if ($result) {
+        while ($rows = mysqli_fetch_array($result)) {
+            echo "<form action='remove_and_modify.php' method='post'>
+                    <td><input type='text' value='" . $rows['medicament'] . "' name='to_modify' readonly class='ancien_medicament'></td>
                     <td><input type='text' name='new_name_medic' required='required'></td>
                     <td><input type='submit' value='modify' name='modify' class='modify_btn'></td>
                     <td><input type='submit' value='delete' name='delete_medic' class='red_btn' onClick='removeRequired(this.form)'></td>
                 </form>
             </tr>";
+        }
     }
 }
