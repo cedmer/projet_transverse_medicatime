@@ -6,15 +6,18 @@ if ($_POST['modify']){
     $old_name = strval($_POST['to_modify']);
     $new_name = $_POST['new_name_medic'];
 
-    $sql = "SELECT * FROM `tableau` WHERE `medicament` LIKE '%".$old_name."%'";
-    $result = mysqli_query($conn, $sql);
+    if(!preg_match("/\s/", $new_name)) {
 
-    while ($rows = mysqli_fetch_array($result)){
-        $id = $rows['tid'];
-        $sql =" UPDATE `tableau` SET `medicament` = '".$new_name."' WHERE `tableau`.`tid` = $id";
+        $sql = "SELECT * FROM `tableau` WHERE `medicament` LIKE '%" . $old_name . "%'";
+        $result = mysqli_query($conn, $sql);
 
-        if(!mysqli_query($conn, $sql)){
-            die("Error: ".mysqli_error($conn));
+        while ($rows = mysqli_fetch_array($result)) {
+            $id = $rows['tid'];
+            $sql = " UPDATE `tableau` SET `medicament` = '" . $new_name . "' WHERE `tableau`.`tid` = $id";
+
+            if (!mysqli_query($conn, $sql)) {
+                die("Error: " . mysqli_error($conn));
+            }
         }
     }
 
