@@ -7,7 +7,7 @@ if($_POST['add_preview']){
     $medic = $_POST['medic'];
     $medic_mg = $_POST['medic_mg'];
 
-    if(!preg_match("/\s/", $medic)){
+    if(!preg_match("/(<)|(\s)|(>)/", $medic)){
         for ($i=8; $i<=22; $i+=2){
 
             if ($i===22){
