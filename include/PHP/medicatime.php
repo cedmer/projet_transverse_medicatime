@@ -1,7 +1,6 @@
 <?php
 include "tab_preview.php";
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -12,9 +11,6 @@ include "tab_preview.php";
     <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style_Mainpage.css">
-    <script type="text/javascript" src="../../JS/Jquery/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="../../JS/Jquery/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="../../JS/autocomplete.js"></script>
 </head>
 
 
@@ -51,7 +47,13 @@ include "tab_preview.php";
             <table>
                 <tr>
                     <td><label>medicament</label></td>
-                    <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*" onClick='autocomplete'></td>
+                    <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*"></td>
+                    
+                </tr>
+                <tr id="block">
+                    <td><label>          </label></td>
+                    <td><div id="response"></div></td>
+                    
                 </tr>
                 <tr>
                     <td><label>mg</label></td>
@@ -133,8 +135,8 @@ include "tab_preview.php";
     </div>
     <script src="../../JS/removerequired.js"></script>
     <script src="../../JS/all_days_hours.js"></script>
-
-
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="../../JS/autocomplete.js"></script>
 </body>
 
 

@@ -1,24 +1,26 @@
-// $(function () {
-//     'use strict';
-//     var arr = ["test", "apple"];
+$(document).ready(function() {
+    $("#medic").keyup(function() {
+        var query = $("#medic").val();
 
-//     $('#medic').autocomplete({
-//         lookup: arr
-//     });
-// });
-$(function () {
-    
-    var arr = ["test", "apple"];
-    // var countriesArray = $.map(countries, function (value, key) { return { value: value, data: key }; });
-
-    // Initialize ajax autocomplete:
-    $('#medic').autocomplete({
-        // serviceUrl: '/autosuggest/service/url',
-        lookup: arr,
-        lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
-            var re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
-            return re.test(suggestion.value);
+        if (query.length > 0) {
+            $.ajax({
+                url: '../../include/PHP/liste_medoc.php',
+                method: 'POST',
+                data: {
+                    search: 1,
+                    q: query
+                },
+                success: function(data) {
+                    $("#response").html(data);
+                },
+                dataType: 'text'
+            });
         }
     });
 
+    $(document).on('click', 'li', function() {
+        var country = $(this).text();
+        $("#medic").val(country);
+        $("#response").html("");
+    });
 });
