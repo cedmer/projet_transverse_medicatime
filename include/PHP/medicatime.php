@@ -1,7 +1,6 @@
 <?php
 include "tab_preview.php";
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -49,6 +48,12 @@ include "tab_preview.php";
                 <tr>
                     <td><label>medicament</label></td>
                     <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*"></td>
+                    
+                </tr>
+                <tr id="block">
+                    <td><label>          </label></td>
+                    <td><div id="response"></div></td>
+                    
                 </tr>
                 <tr>
                     <td><label>mg</label></td>
@@ -129,8 +134,9 @@ include "tab_preview.php";
         </form>
     </div>
     <script src="../../JS/removerequired.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="../../JS/all_days_hours.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="../../JS/autocomplete.js"></script>
 </body>
 
 

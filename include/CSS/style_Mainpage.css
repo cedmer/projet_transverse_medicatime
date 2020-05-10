@@ -1,4 +1,5 @@
 /* for the table */
+
 *{
     box-sizing: border-box;
 }
@@ -182,3 +183,48 @@ input:focus{
     border-color: black;
     outline: none;
 }
+
+.autocomplete-suggestions { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+    border: 1px solid black; 
+    background: #FFF;
+    overflow: auto; 
+}
+.autocomplete-suggestion { 
+    padding: 2px 5px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+}
+.autocomplete-no-suggestion { 
+    padding: 1px 5px;
+}
+.autocomplete-selected { 
+    background: rgb(224, 224, 224); 
+}
+#block{
+    z-index: 2;
+    position: absolute;
+    padding-left: 106px;
+}
+#reponse{
+    text-align: center;
+}
+ ul {
+    list-style: none;
+    border: 1.5px solid #9b9b9b;
+    background-color: rgb(255, 255, 255);
+    width: 175px;
+    text-align: center;
+    float: left;
+    padding: 0px;
+    margin-top: 0px;
+
+
+}
+li:hover {
+    color: black;
+    background: #c5c5c5;
+}
+
