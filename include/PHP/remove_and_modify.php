@@ -1,12 +1,13 @@
 <?php
 
 include("library/conn.php");
+ini_set('display_errors', 'off');
 
 if ($_POST['modify']){
     $old_name = strval($_POST['to_modify']);
     $new_name = $_POST['new_name_medic'];
 
-    if(!preg_match("/(<)|(\s)|(>)/", $new_name)) {
+    if(!preg_match("/\s/", $new_name)) {
 
         $sql = "SELECT * FROM `tableau` WHERE `medicament` LIKE '%" . $old_name . "%'";
         $result = mysqli_query($conn, $sql);

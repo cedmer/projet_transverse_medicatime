@@ -1,5 +1,6 @@
 <?php
 include("library/conn.php");
+ini_set('display_errors', 'off');
 
 if($_POST['add_preview']){
     $heures = " ";
@@ -7,7 +8,7 @@ if($_POST['add_preview']){
     $medic = $_POST['medic'];
     $medic_mg = $_POST['medic_mg'];
 
-    if(!preg_match("/(<)|(\s)|(>)/", $medic)){
+    if(!preg_match("/\s/", $medic)){
         for ($i=8; $i<=22; $i+=2){
 
             if ($i===22){
@@ -35,8 +36,6 @@ if($_POST['add_preview']){
             }
         }
     }
-
-
 
 }
 

@@ -32,15 +32,11 @@ include "tab_preview.php";
             </table>
         </div>
     </div>
-    <div class="button_pdf_1">
-        <form action="pdf_generator.php" method="post">
-            <input type="submit" value="pdf" id="pdf_1">
-        </form>
-    </div>
+   
     <div id="forms">
 
         <form method="post" action="new_table.php" id="new">
-            <input type="submit" name="new_table" value="new table" id="new_table_btn">
+            <input type="submit" name="new_table" value="Vider le tableau" id="new_table_btn">
         </form>
         <form method="post" action="add_medic.php">
 
@@ -57,7 +53,7 @@ include "tab_preview.php";
                 </tr>
                 <tr>
                     <td><label>mg</label></td>
-                    <td><input type="number" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
+                    <td><input type="number" min="0" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
 
                 </tr>
                 <tr>
@@ -109,14 +105,15 @@ include "tab_preview.php";
                     <td><input type="checkbox" name="nuit_check"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" name="every_day" value="tous les jours" class="red_btn"></td>
+                    <td><input type="button" name="every_day" value="Tous les jours" class="red_btn"></td>
                     <td></td>
-                    <td><input type="button" name="every_hour" value="toutes les heures" class="red_btn"></td>
+                    <td><input type="button" name="every_hour" value="Toutes les heures" class="red_btn"></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="add to preview" id="add_preview" name="add_preview"></td>
+                    <td><input type="submit" value="Prévisualiser" id="add_preview" name="add_preview"></td>
                     <td></td>
+
                     <td></td>
                 </tr>
             </table>
@@ -137,6 +134,119 @@ include "tab_preview.php";
     <script src="../../JS/all_days_hours.js"></script>
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="../../JS/autocomplete.js"></script>
+
+
+
+
+
+    <?php
+
+        if (isset($_POST['Enregistrer']) and isset($_POST['mail']))
+        {
+            $mail=$_POST['mail'];
+
+            if($mail!=NULL)
+            {
+                $is_username_unique=$bdd->prepare('SELECT * FROM patient WHERE mail = ?');      //on vérifie que le patient existe via le mail qui est unique
+                $is_username_unique->execute(array($mail));
+                $is_username_unique->closeCursor();
+                $count=$is_username_unique->rowCount();
+
+                if($count!=0)
+                {
+                    $reqpid = $bdd->prepare("SELECT pid FROM patient WHERE mail = :mail");      //on récupère son pid
+                    $reqpid->execute(array('mail' => $mail));
+                    $data=$reqpid->fetch(PDO::FETCH_OBJ);     
+                    $pid = $data->pid; 
+
+                    $reqtab = $bdd->prepare("SELECT medicament, jour, heure, dosage FROM tableau");     //on récupère les données du tableau
+                    $reqtab->execute(array());
+                    $data=$reqtab->fetchAll();                              //data est un tableau 2D contenant les données médicament, jour, heure, dosage
+
+                    foreach ($data as list($a, $b, $c, $d)) {               //a chaque itération, $a, $b, $c, $d prennent respectivement medicament, jour, heure, dosage (une boucle = une ligne)
+                        $medicament = $a;
+                        $jour = $b;
+                        $heure = $c;
+                        $dosage = $d;
+
+                    $req=$bdd->prepare('INSERT INTO tableau_patient(medicament,jour,heure,dosage,pid) VALUES(:medicament,:jour,:heure,:dosage,:pid)');    //on ajoute dans tableau_patient avec son pid
+                    $req->execute(array(
+                        'medicament'=>$medicament,
+                        'jour'=>$jour,
+                        'heure'=>$heure,
+                        'dosage'=>$dosage,
+                        'pid'=>$pid
+                    ));
+                    $req->closeCursor();
+                    }
+
+                    echo'<p id="Error">Le calendrier a été ajouté à ce patient.</p>';  
+                }
+                else
+                {
+                    echo'<p id="Error">Informations invalides. Ce mail est introuvable.</p>';  
+                }
+            }
+            else
+            {
+                echo'<p id="Error">Veuillez remplir le mail.</p>';  
+            } 
+        }
+
+
+        if (isset($_POST['Supprimer']) and isset($_POST['mail']))
+        {
+            $mail=$_POST['mail'];
+
+            if($mail!=NULL)
+            {
+                $is_username_unique=$bdd->prepare('SELECT * FROM patient WHERE mail = ?');      //on vérifie que le patient existe via le mail qui est unique
+                $is_username_unique->execute(array($mail));
+                $is_username_unique->closeCursor();
+                $count=$is_username_unique->rowCount();
+
+                if($count!=0)
+                {
+                    $reqpid = $bdd->prepare("SELECT pid FROM patient WHERE mail = :mail"); //on récupère son pid
+                    $reqpid->execute(array('mail' => $mail));
+                    $data=$reqpid->fetch(PDO::FETCH_OBJ);     
+                    $pid = $data->pid; 
+
+                    $req=$bdd->prepare('DELETE from tableau_patient WHERE pid = :pid');    //on ajoute
+                    $req->execute(array(
+                    'pid' => $pid
+                    ));
+                    $req->closeCursor();
+
+                    echo'<p id="Error">Le calendrier a été supprimé.</p>';  
+                }
+                else
+                {
+                    echo'<p id="Error">Informations invalides. Ce mail est introuvable.</p>';  
+                }
+            }
+            else
+            {
+                echo'<p id="Error">Veuillez remplir le mail.</p>';  
+            }
+        }
+
+    ?>
+
+
+
+
+    <div class="formbox">
+
+        <form method="POST" id="form">
+            <label>Mail du patient</label><br>
+            <input type="mail" name="mail" class="logbox" placeholder="Mail"><br><br>
+            <input type="submit" name="Supprimer" id="submitbox" value="Supprimer">
+            <input type="submit" name="Enregistrer" id="submitbox" value="Enregistrer">
+        </form>
+        
+    </div>
+
 </body>
 
 
