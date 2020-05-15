@@ -32,7 +32,7 @@ include "tab_preview.php";
             </table>
         </div>
     </div>
-   
+
     <div id="forms">
 
         <form method="post" action="new_table.php" id="new">
@@ -44,12 +44,14 @@ include "tab_preview.php";
                 <tr>
                     <td><label>medicament</label></td>
                     <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*"></td>
-                    
+
                 </tr>
                 <tr id="block">
-                    <td><label>          </label></td>
-                    <td><div id="response"></div></td>
-                    
+                    <td><label> </label></td>
+                    <td>
+                        <div id="response"></div>
+                    </td>
+
                 </tr>
                 <tr>
                     <td><label>mg</label></td>
@@ -136,82 +138,15 @@ include "tab_preview.php";
     <script src="../../JS/autocomplete.js"></script>
 
 
-
-
-
-    <?php
-
-        if (isset($_POST['Enregistrer']) and isset($_POST['mail']))
-        {
-            $mail=$_POST['mail'];
-
-            if($mail!=NULL)
-            {
-                $is_username_unique=$bdd->prepare('SELECT * FROM patient WHERE mail = ?');      //on vérifie que le patient existe via le mail qui est unique
-                $is_username_unique->execute(array($mail));
-                $is_username_unique->closeCursor();
-                $count=$is_username_unique->rowCount();
-
-                if($count!=0)
-                {
-                    $reqpid = $bdd->prepare("SELECT pid FROM patient WHERE mail = :mail");      //on récupère son pid
-                    $reqpid->execute(array('mail' => $mail));
-                    $data=$reqpid->fetch(PDO::FETCH_OBJ);     
-                    $pid = $data->pid; 
-
-                    $req=$bdd->prepare('DELETE from tableau_patient WHERE pid = :pid');    //on supprime
-                    $req->execute(array(
-                    'pid' => $pid
-                    ));
-                    $req->closeCursor();
-
-                    $reqtab = $bdd->prepare("SELECT medicament, jour, heure, dosage FROM tableau");     //on récupère les données du tableau
-                    $reqtab->execute(array());
-                    $data=$reqtab->fetchAll();                              //data est un tableau 2D contenant les données médicament, jour, heure, dosage
-
-                    foreach ($data as list($a, $b, $c, $d)) {               //a chaque itération, $a, $b, $c, $d prennent respectivement medicament, jour, heure, dosage (une boucle = une ligne)
-                        $medicament = $a;
-                        $jour = $b;
-                        $heure = $c;
-                        $dosage = $d;
-
-                    $req=$bdd->prepare('INSERT INTO tableau_patient(medicament,jour,heure,dosage,pid) VALUES(:medicament,:jour,:heure,:dosage,:pid)');    //on ajoute dans tableau_patient avec son pid
-                    $req->execute(array(
-                        'medicament'=>$medicament,
-                        'jour'=>$jour,
-                        'heure'=>$heure,
-                        'dosage'=>$dosage,
-                        'pid'=>$pid
-                    ));
-                    $req->closeCursor();
-                    }
-
-                    echo'<p id="Error">Le calendrier a été ajouté à ce patient.</p>';  
-                }
-                else
-                {
-                    echo'<p id="Error">Informations invalides. Ce mail est introuvable.</p>';  
-                }
-            }
-            else
-            {
-                echo'<p id="Error">Veuillez remplir le mail.</p>';  
-            } 
-        }
-
-    ?>
-
-
-
-
     <div class="formbox">
 
-        <form method="POST" id="form">
+        <form method="POST" id="form" action="Charger_enregistrer.php">
             <label>Mail du patient</label><br>
             <input type="mail" name="mail" class="logbox" placeholder="Mail"><br><br>
             <input type="submit" name="Enregistrer" id="submitbox" value="Enregistrer">
+            <input type="submit" name="Charger" id="submitbox" value="Charger">
         </form>
-        
+
     </div>
 
 </body>
