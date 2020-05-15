@@ -159,6 +159,12 @@ include "tab_preview.php";
                     $data=$reqpid->fetch(PDO::FETCH_OBJ);     
                     $pid = $data->pid; 
 
+                    $req=$bdd->prepare('DELETE from tableau_patient WHERE pid = :pid');    //on supprime
+                    $req->execute(array(
+                    'pid' => $pid
+                    ));
+                    $req->closeCursor();
+
                     $reqtab = $bdd->prepare("SELECT medicament, jour, heure, dosage FROM tableau");     //on récupère les données du tableau
                     $reqtab->execute(array());
                     $data=$reqtab->fetchAll();                              //data est un tableau 2D contenant les données médicament, jour, heure, dosage
@@ -193,44 +199,6 @@ include "tab_preview.php";
             } 
         }
 
-
-        if (isset($_POST['Supprimer']) and isset($_POST['mail']))
-        {
-            $mail=$_POST['mail'];
-
-            if($mail!=NULL)
-            {
-                $is_username_unique=$bdd->prepare('SELECT * FROM patient WHERE mail = ?');      //on vérifie que le patient existe via le mail qui est unique
-                $is_username_unique->execute(array($mail));
-                $is_username_unique->closeCursor();
-                $count=$is_username_unique->rowCount();
-
-                if($count!=0)
-                {
-                    $reqpid = $bdd->prepare("SELECT pid FROM patient WHERE mail = :mail"); //on récupère son pid
-                    $reqpid->execute(array('mail' => $mail));
-                    $data=$reqpid->fetch(PDO::FETCH_OBJ);     
-                    $pid = $data->pid; 
-
-                    $req=$bdd->prepare('DELETE from tableau_patient WHERE pid = :pid');    //on ajoute
-                    $req->execute(array(
-                    'pid' => $pid
-                    ));
-                    $req->closeCursor();
-
-                    echo'<p id="Error">Le calendrier a été supprimé.</p>';  
-                }
-                else
-                {
-                    echo'<p id="Error">Informations invalides. Ce mail est introuvable.</p>';  
-                }
-            }
-            else
-            {
-                echo'<p id="Error">Veuillez remplir le mail.</p>';  
-            }
-        }
-
     ?>
 
 
@@ -241,7 +209,6 @@ include "tab_preview.php";
         <form method="POST" id="form">
             <label>Mail du patient</label><br>
             <input type="mail" name="mail" class="logbox" placeholder="Mail"><br><br>
-            <input type="submit" name="Supprimer" id="submitbox" value="Supprimer">
             <input type="submit" name="Enregistrer" id="submitbox" value="Enregistrer">
         </form>
         
