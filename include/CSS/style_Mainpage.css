@@ -1,9 +1,5 @@
 /* for the table */
 
- {
-  box-sizing: border-box;
-}
-
 #table_preview table,
 #table_preview td,
 #table_preview tr {

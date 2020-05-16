@@ -26,15 +26,15 @@ include "tab_preview.php";
     <div id="time_table_container">
         <div id="table_preview">
 
-            <h1>Emploi du temps</h1>
+            <h1>Calendrier</h1>
 
             <table>
 
                 <?php
-
+                $id_patient = $_SESSION['pid'];
                 include("library/conn.php");
 
-                $sql = "SELECT medicament,jour,heure,dosage FROM `tableau_patient` WHERE pid = ? ";
+                $sql = "SELECT medicament,jour,heure,dosage FROM `tableau_patient` WHERE pid = '$id_patient' ";
                 $result = mysqli_query($conn, $sql);
 
                 echo "<tr>
@@ -48,14 +48,14 @@ include "tab_preview.php";
                             <td class='jour'>Dimanche</td>
                     </tr>";
 
-                for ($i=8; $i<=22; $i+=2){
-                    echo "<tr> <td class='heures'>".$i."h</td>";
+                for ($i = 8; $i <= 22; $i += 2) {
+                    echo "<tr> <td class='heures'>" . $i . "h</td>";
 
-                    for ($j=1; $j<=7; $j++){
+                    for ($j = 1; $j <= 7; $j++) {
                         echo "<td class='champs'>";
-                        while ($rows = mysqli_fetch_array($result)){
-                            if (($rows['heure']=="$i") && ($rows['jour']=="$j")){
-                                echo $rows['medicament']."  ".$rows['dosage']."mg <a href='remove_and_modify.php?id=".$rows['tid']."' class='close'></a></br>";
+                        while ($rows = mysqli_fetch_array($result)) {
+                            if (($rows['heure'] == "$i") && ($rows['jour'] == "$j")) {
+                                echo $rows['medicament'] . "  " . $rows['dosage'] . "mg </br>";
                             }
                         }
                         echo "</td>";
@@ -68,21 +68,21 @@ include "tab_preview.php";
             </table>
         </div>
     </div>
-   
 
-    
+
+
     <div class="button_pdf_2">
         <form action="pdf_generator.php" method="post">
             <input type="submit" value="pdf" id="pdf_2">
         </form>
     </div>
 
-   
 
 
 
 
-    
+
+
 
 </body>
 

@@ -13,6 +13,7 @@ include "tab_preview.php";
     <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style_test.css">
+    <link rel="stylesheet" href="../CSS/style_Mainpage.css">
 </head>
 
 
