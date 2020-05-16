@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 12 mai 2020 à 15:33
+-- Généré le :  sam. 16 mai 2020 à 14:17
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -54,17 +54,18 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `pid` int(11) NOT NULL AUTO_INCREMENT,
   `nom` text NOT NULL,
   `prenom` text NOT NULL,
-  `age` int(11) NOT NULL,
+  `date_naissance` date NOT NULL,
   `mail` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `patient`
 --
 
-INSERT INTO `patient` (`pid`, `nom`, `prenom`, `age`, `mail`) VALUES
-(1, 'test', 'test', 18, 'test@gmail.com');
+INSERT INTO `patient` (`pid`, `nom`, `prenom`, `date_naissance`, `mail`, `mdp`) VALUES
+(2, 'a', 'b', '2004-01-01', 'ab@gmail.com', '$2y$10$BWjCEU4Cha2AiTbmz.VAmuXNc2gDfX2hljkgGYONqyUVhZ3q.lq6.');
 
 -- --------------------------------------------------------
 
@@ -80,20 +81,19 @@ CREATE TABLE IF NOT EXISTS `tableau` (
   `heure` varchar(255) NOT NULL,
   `dosage` varchar(255) NOT NULL,
   PRIMARY KEY (`tid`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `tableau`
 --
 
 INSERT INTO `tableau` (`tid`, `medicament`, `jour`, `heure`, `dosage`) VALUES
-(1, 'Doliprane', '1', '10', '500'),
-(2, 'Doliprane', '2', '10', '500'),
-(3, 'Doliprane', '3', '10', '500'),
-(4, 'Doliprane', '1', '20', '500'),
-(5, 'Doliprane', '2', '20', '500'),
-(6, 'Doliprane', '3', '20', '500'),
-(7, 'paracetamol', '7', '22', '20');
+(4, 'Doliprane', '2', '8', '500'),
+(3, 'Doliprane', '1', '8', '500'),
+(5, 'Doliprane', '3', '8', '500'),
+(6, 'Doliprane', '1', '20', '500'),
+(7, 'Doliprane', '2', '20', '500'),
+(8, 'Doliprane', '3', '20', '500');
 
 -- --------------------------------------------------------
 
@@ -110,26 +110,19 @@ CREATE TABLE IF NOT EXISTS `tableau_patient` (
   `dosage` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   PRIMARY KEY (`tpid`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `tableau_patient`
 --
 
 INSERT INTO `tableau_patient` (`tpid`, `medicament`, `jour`, `heure`, `dosage`, `pid`) VALUES
-(12, 'Doliprane', '3', 20, 500, 1),
-(11, 'Doliprane', '2', 20, 500, 1),
-(10, 'Doliprane', '1', 20, 500, 1),
-(9, 'Doliprane', '3', 10, 500, 1),
-(8, 'Doliprane', '2', 10, 500, 1),
-(7, 'Doliprane', '1', 10, 500, 1),
-(13, 'Doliprane', '1', 10, 500, 1),
-(14, 'Doliprane', '2', 10, 500, 1),
-(15, 'Doliprane', '3', 10, 500, 1),
-(16, 'Doliprane', '1', 20, 500, 1),
-(17, 'Doliprane', '2', 20, 500, 1),
-(18, 'Doliprane', '3', 20, 500, 1),
-(19, 'paracetamol', '7', 22, 20, 1);
+(1, 'Doliprane', '2', 8, 500, 2),
+(2, 'Doliprane', '1', 8, 500, 2),
+(3, 'Doliprane', '3', 8, 500, 2),
+(4, 'Doliprane', '1', 20, 500, 2),
+(5, 'Doliprane', '2', 20, 500, 2),
+(6, 'Doliprane', '3', 20, 500, 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

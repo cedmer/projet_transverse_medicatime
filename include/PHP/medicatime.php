@@ -33,94 +33,88 @@ include "tab_preview.php";
         </div>
     </div>
 
-    <div id="forms">
+   <div id="main">
+        <div id="forms">
 
-        <form method="post" action="new_table.php" id="new">
-            <input type="submit" name="new_table" value="Vider le tableau" id="new_table_btn">
-        </form>
-        <form method="post" action="add_medic.php">
+            <form method="post" action="add_medic.php">
 
-            <table>
-                <tr>
-                    <td><label>medicament</label></td>
-                    <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*"></td>
+                <table>
+                    <tr>
+                        <td><label>Medicament</label></td>
+                        <td><input type="text" placeholder="medicament" required="required" name="medic" id="medic" pattern="[^0-9]*"></td>
+                    </tr>
+                    <tr>
+                        <td><label>mg</label></td>
+                        <td><input type="number" min="0" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
+                    </tr>
+                    <tr>
+                        <td><br><label>lundi</label></td>
+                        <td><br><input type="checkbox" name="1_jour"></td>
+                        <td><br><label>8h</label></td>
+                        <td><br><input type="checkbox" name="8_check"></td>
+                    </tr>
+                    <tr>
+                        <td><label>mardi</label></td>
+                        <td><input type="checkbox" name="2_jour"></td>
+                        <td><label>10h</label></td>
+                        <td><input type="checkbox" name="10_check"></td>
+                    </tr>
+                    <tr>
+                        <td><label>mercredi</label></td>
+                        <td><input type="checkbox" name="3_jour"></td>
+                        <td><label>12h</label></td>
+                        <td><input type="checkbox" name="12_check"></td>
+                    </tr>
+                    <tr>
+                        <td><label>jeudi</label></td>
+                        <td><input type="checkbox" name="4_jour"></td>
+                        <td><label>14h</label></td>
+                        <td><input type="checkbox" name="14_check"></td>
+                    </tr>
+                    <tr>
+                        <td><label>vendredi</label></td>
+                        <td><input type="checkbox" name="5_jour"></td>
+                        <td><label>16h</label></td>
+                        <td><input type="checkbox" name="16_check"></td>
+                    </tr>
+                    <tr>
+                        <td><label>samedi</label></td>
+                        <td><input type="checkbox" name="6_jour"></td>
+                        <td><label>18h</label></td>
+                        <td><input type="checkbox" name="18_check"></td>
+                    </tr>
+                    <tr>
+                        <td><label>dimanche</label></td>
+                        <td><input type="checkbox" name="7_jour"></td>
+                        <td><label>20h</label></td>
+                        <td><input type="checkbox" name="20_check"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><label>nuit</label></td>
+                        <td><input type="checkbox" name="nuit_check"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="every_day" value="Tous les jours" class="red_btn"></td>
+                        <td></td>
+                        <td><input type="button" name="every_hour" value="Toutes les heures" class="red_btn"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="hvr-grow" type="submit" value="Prévisualiser" id="add_preview" name="add_preview"></td>
+                        <td></td>
+                        </form>
 
-                </tr>
-                <tr id="block">
-                    <td><label> </label></td>
-                    <td>
-                        <div id="response"></div>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td><label>mg</label></td>
-                    <td><input type="number" min="0" placeholder="mg" required="required" name="medic_mg" id="medic_mg"></td>
-
-                </tr>
-                <tr>
-                    <td><label>lundi</label></td>
-                    <td><input type="checkbox" name="1_jour"></td>
-                    <td><label>8h</label></td>
-                    <td><input type="checkbox" name="8_check"></td>
-                </tr>
-                <tr>
-                    <td><label>mardi</label></td>
-                    <td><input type="checkbox" name="2_jour"></td>
-                    <td><label>10h</label></td>
-                    <td><input type="checkbox" name="10_check"></td>
-                </tr>
-                <tr>
-                    <td><label>mercredi</label></td>
-                    <td><input type="checkbox" name="3_jour"></td>
-                    <td><label>12h</label></td>
-                    <td><input type="checkbox" name="12_check"></td>
-                </tr>
-                <tr>
-                    <td><label>jeudi</label></td>
-                    <td><input type="checkbox" name="4_jour"></td>
-                    <td><label>14h</label></td>
-                    <td><input type="checkbox" name="14_check"></td>
-                </tr>
-                <tr>
-                    <td><label>vendredi</label></td>
-                    <td><input type="checkbox" name="5_jour"></td>
-                    <td><label>16h</label></td>
-                    <td><input type="checkbox" name="16_check"></td>
-                </tr>
-                <tr>
-                    <td><label>samedi</label></td>
-                    <td><input type="checkbox" name="6_jour"></td>
-                    <td><label>18h</label></td>
-                    <td><input type="checkbox" name="18_check"></td>
-                </tr>
-                <tr>
-                    <td><label>dimanche</label></td>
-                    <td><input type="checkbox" name="7_jour"></td>
-                    <td><label>20h</label></td>
-                    <td><input type="checkbox" name="20_check"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><label>nuit</label></td>
-                    <td><input type="checkbox" name="nuit_check"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" name="every_day" value="Tous les jours" class="red_btn"></td>
-                    <td></td>
-                    <td><input type="button" name="every_hour" value="Toutes les heures" class="red_btn"></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Prévisualiser" id="add_preview" name="add_preview"></td>
-                    <td></td>
-
-                    <td></td>
-                </tr>
-            </table>
-        </form>
-    </div>
+                        <td><form method="post" action="new_table.php" id="new">
+                                <input class="hvr-grow" type="submit" name="new_table" value="Vider le tableau" id="new_table_btn">
+                            </form>
+                        <td></td>
+                    </tr>
+                </table>
+            
+        </div>
+    </div>    
 
     <table id="table_medic">
         <?php
@@ -129,7 +123,7 @@ include "tab_preview.php";
     </table>
     <div class="button_pdf_2">
         <form action="pdf_generator.php" method="post">
-            <input type="submit" value="pdf" id="pdf_2">
+            <input class="hvr-grow" type="submit" value="pdf" id="pdf_2">
         </form>
     </div>
     <script src="../../JS/removerequired.js"></script>
@@ -138,15 +132,82 @@ include "tab_preview.php";
     <script src="../../JS/autocomplete.js"></script>
 
 
+
+
+
+    <?php
+
+        if (isset($_POST['Enregistrer']) and isset($_POST['mail']))
+        {
+            $mail=$_POST['mail'];
+
+            if($mail!=NULL)
+            {
+                $is_username_unique=$bdd->prepare('SELECT * FROM patient WHERE mail = ?');      //on vérifie que le patient existe via le mail qui est unique
+                $is_username_unique->execute(array($mail));
+                $is_username_unique->closeCursor();
+                $count=$is_username_unique->rowCount();
+
+                if($count!=0)
+                {
+                    $reqpid = $bdd->prepare("SELECT pid FROM patient WHERE mail = :mail");      //on récupère son pid
+                    $reqpid->execute(array('mail' => $mail));
+                    $data=$reqpid->fetch(PDO::FETCH_OBJ);     
+                    $pid = $data->pid; 
+
+                    $req=$bdd->prepare('DELETE from tableau_patient WHERE pid = :pid');    //on supprime
+                    $req->execute(array(
+                    'pid' => $pid
+                    ));
+                    $req->closeCursor();
+
+                    $reqtab = $bdd->prepare("SELECT medicament, jour, heure, dosage FROM tableau");     //on récupère les données du tableau
+                    $reqtab->execute(array());
+                    $data=$reqtab->fetchAll();                              //data est un tableau 2D contenant les données médicament, jour, heure, dosage
+
+                    foreach ($data as list($a, $b, $c, $d)) {               //a chaque itération, $a, $b, $c, $d prennent respectivement medicament, jour, heure, dosage (une boucle = une ligne)
+                        $medicament = $a;
+                        $jour = $b;
+                        $heure = $c;
+                        $dosage = $d;
+
+                    $req=$bdd->prepare('INSERT INTO tableau_patient(medicament,jour,heure,dosage,pid) VALUES(:medicament,:jour,:heure,:dosage,:pid)');    //on ajoute dans tableau_patient avec son pid
+                    $req->execute(array(
+                        'medicament'=>$medicament,
+                        'jour'=>$jour,
+                        'heure'=>$heure,
+                        'dosage'=>$dosage,
+                        'pid'=>$pid
+                    ));
+                    $req->closeCursor();
+                    }
+
+                    echo'<p id="Error">Le calendrier a été ajouté à ce patient.</p>';  
+                }
+                else
+                {
+                    echo'<p id="Error">Informations invalides. Ce mail est introuvable.</p>';  
+                }
+            }
+            else
+            {
+                echo'<p id="Error">Veuillez remplir le mail.</p>';  
+            } 
+        }
+
+    ?>
+
+
+
+
     <div class="formbox">
 
-        <form method="POST" id="form" action="Charger_enregistrer.php">
-            <label>Mail du patient</label><br>
-            <input type="mail" name="mail" class="logbox" placeholder="Mail"><br><br>
-            <input type="submit" name="Enregistrer" id="submitbox" value="Enregistrer">
-            <input type="submit" name="Charger" id="submitbox" value="Charger">
+        <form method="POST" id="form">
+            <label>Vous avez terminé ? Remplissez le mail du patient et enregistrez.</label><br>
+            <input size="30" type="mail" name="mail" class="logbox" placeholder="Mail"><br><br>
+            <input class="hvr-grow" type="submit" name="Enregistrer" id="submitbox" value="Enregistrer">
         </form>
-
+        
     </div>
 
 </body>
