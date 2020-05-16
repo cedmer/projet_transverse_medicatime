@@ -36,7 +36,7 @@ include "tab_preview.php";
 
           if($mail=='admin' and $mdp_to_check=='admin')      //pour l'admin
           {
-              $_SESSION['admin'];
+              $_SESSION['admin'] = $mail;
               header("Location: medicatime.php");
           }
   
@@ -58,7 +58,7 @@ include "tab_preview.php";
 
               if(password_verify($mdp_to_check, $mdp))      //2 paramètres : le 1er contient le mot de passe fourni, le 2ème contient le mot de passe connu 
               {                                             //la fonction password verify va retourner TRUE si les deux mdp sont identiques
-                $_SESSION['patient'];
+                $_SESSION['patient'] = $mail;
                 header("Location: calendrier.php");
               }
               else
