@@ -1,38 +1,38 @@
 /* for the table */
 
-#table_preview table,
-#table_preview td,
-#table_preview tr {
-  margin: 0 auto;
-  border: 1px solid #e5e5e5;
-  text-align: center;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-}
-#table_preview table {
-  min-width: 1000px;
-}
-#time_table_container {
-  margin: 0 auto;
-  text-align: center;
-  background-color: #ffffff;
-  border-radius: 6px;
-}
+/* #table_preview table,
+    #table_preview td,
+    #table_preview tr {
+    margin: 0 auto;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    }
+    #table_preview table {
+    min-width: 1000px;
+    }
+    #time_table_container {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 6px;
+    }
 
-.jour,
-.heures {
-  font-family: "Roboto", sans-serif;
-  background: #9675ce;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-}
-.jour {
-  padding: 15px;
-}
-.champs {
-  padding-right: 15px;
-}
+    .jour,
+    .heures {
+    font-family: "Roboto", sans-serif;
+    background: #9675ce;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    }
+    .jour {
+    padding: 15px;
+    }
+    .champs {
+    padding-right: 15px;
+    } */
 /* for the table */
 
 h1 {
@@ -48,23 +48,32 @@ h1 {
   top: 150px;
   margin-bottom: 40px;
 }
+.button_pdf_1 {
+}
+.container_pdf {
+  position: absolute;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  right: 2.1%;
+}
+
 #pdf_2 {
-  background-color: #ed2553;
+  background-color: #c73154;
   position: relative;
 }
 #pdf_2:hover {
   background-color: #bd1d42;
 }
 
-#forms {
+/* #forms {
   display: flex;
   width: 50%;
   justify-content: center;
   text-align: center;
   border: 1px solid #d4d4d4;
   padding: 20px;
-}
-.jour_form {
+} */
+/* .jour_form {
   text-align: left;
 }
 .mg_form {
@@ -81,36 +90,46 @@ h1 {
 }
 .ancien_medicament {
   pointer-events: none;
-}
+} */
 
 #new_table_btn,
 .modify_btn {
-  background-color: deepskyblue;
+  background-color: #00a8d6;
 }
 
 #new_table_btn:hover,
 .modify_btn:hover {
-  background-color: #00a8d6;
+  background-color: #0293bb;
 }
 
 #add_preview {
-  background-color: limegreen;
+  background-color: #34a734;
 }
 
 #add_preview:hover {
-  background-color: #279c27;
+  background-color: #289428;
 }
 
 #table_medic {
   margin-bottom: 20px;
   margin-top: 40px;
-  margin-left: 35.5%;
+  margin-left: 32%;
+}
+.red_btn {
+  background: #c73154;
+}
+.red_btn:hover {
+  background-color: #bd1d42;
+}
+input:focus {
+  border-color: black;
+  outline: none;
 }
 
 /* for the form */
 
 /* for the cross */
-.close {
+/* .close {
   position: absolute;
   opacity: 0.3;
 }
@@ -132,7 +151,7 @@ h1 {
 }
 .close:after {
   transform: rotate(-45deg);
-}
+} */
 /* for the cross */
 
 /* button */
@@ -158,17 +177,6 @@ input[type="checkbox"] {
   height: 15px;
   width: 15px;
   border: none;
-}
-
-.red_btn {
-  background: #ed2553;
-}
-.red_btn:hover {
-  background-color: #bd1d42;
-}
-input:focus {
-  border-color: black;
-  outline: none;
 }
 
 .autocomplete-suggestions {

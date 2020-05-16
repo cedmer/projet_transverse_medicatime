@@ -15,7 +15,7 @@ footer {
   background-color: #f8fbfe;
   margin-top: 50px;
   padding-top: 25px;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
 }
 
 #tab table {
@@ -34,6 +34,15 @@ footer {
 #tab .jour {
   border: 2px solid #ddd;
   border-bottom: 3px solid #ddd;
+}
+.jour,
+.heures {
+  font-family: "Roboto", sans-serif;
+  background: #128286;
+  opacity: 0.8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 }
 /*###### tableau #######*/
 
@@ -66,6 +75,7 @@ footer {
 /* for the form*/
 #container_form {
   border: 1px solid rgb(179, 177, 177);
+  background-color: #f8fbfe;
   border-radius: 10px;
   margin-top: 25px;
   padding-top: 25px;
@@ -73,9 +83,41 @@ footer {
 }
 #form table {
   width: 100%;
-  border: 1px solid #e5e5e5;
   background-color: white;
-  border: 2px solid #ddd;
   margin-top: 20px;
 }
+
+#form #champs2 td {
+  border: 1px solid #e5e5e5;
+}
+
+#form #champs2 #transparent {
+  border: 1px solid white;
+  background-color: #f8fbfe;
+  padding-top: 15px;
+  padding-bottom: -15px;
+}
+#form #champs {
+  background-color: #f8fbfe;
+}
+
+#form #champs #reponse {
+  text-align: center;
+}
+#form ul {
+  list-style: none;
+  border: 1.5px solid #9b9b9b;
+  background-color: rgb(255, 255, 255);
+  width: 190px;
+  text-align: center;
+  float: left;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+#form li:hover {
+  color: black;
+  background: #c5c5c5;
+}
+
 /* for the form*/
