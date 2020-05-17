@@ -1,6 +1,7 @@
 <?php
 
-function tab_preview(){
+function tab_preview()
+{
 
     include("library/conn.php");
 
@@ -19,14 +20,14 @@ function tab_preview(){
                 <td class='jour'>Dimanche</td>
         </tr>";
 
-    for ($i=8; $i<=22; $i+=2){
-        echo "<tr> <td class='heures'>".$i."h</td>";
+    for ($i = 8; $i <= 22; $i += 2) {
+        echo "<tr> <td class='heures'>" . $i . "h</td>";
 
-        for ($j=1; $j<=7; $j++){
+        for ($j = 1; $j <= 7; $j++) {
             echo "<td class='champs'>";
-            while ($rows = mysqli_fetch_array($result)){
-                if (($rows['heure']=="$i")&&($rows['jour']=="$j")){
-                    echo $rows['medicament']."  ".$rows['dosage']."mg <a href='remove_and_modify.php?id=".$rows['tid']."' class='close'></a></br>";
+            while ($rows = mysqli_fetch_array($result)) {
+                if (($rows['heure'] == "$i") && ($rows['jour'] == "$j")) {
+                    echo $rows['medicament'] . "  " . $rows['dosage'] . "mg <a href='remove_and_modify.php?id=" . $rows['tid'] . "' class='close'></a></br>";
                 }
             }
             echo "</td>";
@@ -34,10 +35,10 @@ function tab_preview(){
             mysqli_data_seek($result, 0);
         }
     }
-
 }
 
-function medic_preview(){
+function medic_preview()
+{
 
     include("library/conn.php");
 
@@ -46,11 +47,11 @@ function medic_preview(){
 
     if ($result) {
         while ($rows = mysqli_fetch_array($result)) {
-            echo "<form action='remove_and_modify.php' method='post'>
-                    <td><input type='text' value='" . $rows['medicament'] . "' name='to_modify' readonly class='ancien_medicament'></td>
-                    <td><input type='text' name='new_name_medic' required='required'></td>
-                    <td><input type='submit' value='modify' name='modify' class='modify_btn'></td>
-                    <td><input type='submit' value='delete' name='delete_medic' class='red_btn' onClick='removeRequired(this.form)'></td>
+            echo " <form action='remove_and_modify.php' method='post'>
+                    <td id=\"transparent\"><input type='text' value='" . $rows['medicament'] . "' name='to_modify' readonly class='ancien_medicament'></td>
+                    <td id=\"transparent\"><input type='text' name='new_name_medic' required='required'></td>
+                    <td id=\"transparent\"><input type='submit' value='modify' name='modify' class='modify_btn'></td>
+                    <td id=\"transparent\"><input type='submit' value='delete' name='delete_medic' class='red_btn' onClick='removeRequired(this.form)'></td>
                 </form>
             </tr>";
         }

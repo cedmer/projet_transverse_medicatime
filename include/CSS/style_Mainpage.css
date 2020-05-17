@@ -1,54 +1,135 @@
-/* for the table */
+[class*="col-"],
+footer {
+  text-align: center;
+  margin: auto;
+}
+[class*="col-lg-6"] {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 20px;
+}
 
-/* #table_preview table,
-    #table_preview td,
-    #table_preview tr {
-    margin: 0 auto;
-    border: 1px solid #e5e5e5;
-    text-align: center;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-    }
-    #table_preview table {
-    min-width: 1000px;
-    }
-    #time_table_container {
-    margin: 0 auto;
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 6px;
-    }
-
-    .jour,
-    .heures {
-    font-family: "Roboto", sans-serif;
-    background: #9675ce;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    }
-    .jour {
-    padding: 15px;
-    }
-    .champs {
-    padding-right: 15px;
-    } */
-/* for the table */
-
+/*###### tableau #######*/
 h1 {
   font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 100;
 }
 
-/* for the form */
+#container_tab {
+  border: 1px solid rgb(179, 177, 177);
+  border-radius: 10px;
+  background-color: #f8fbfe;
+  margin-top: 50px;
+  padding-top: 25px;
+  padding-bottom: 75px;
+}
+
+#tab table {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  border: 2px solid #ddd;
+  margin-top: 20px;
+}
+
+#tab table td {
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+}
+
+#tab .jour {
+  border: 2px solid #ddd;
+  border-bottom: 3px solid #ddd;
+}
+.jour,
+.heures {
+  font-family: "Roboto", sans-serif;
+  background: #128286;
+  opacity: 0.8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+/*###### tableau #######*/
+
+/* for the cross */
+.close {
+  position: absolute;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  content: " ";
+  height: 10px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+/* for the cross */
+
+/* for the form*/
+#container_form {
+  border: 1px solid rgb(179, 177, 177);
+  background-color: #f8fbfe;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+#form table {
+  width: 100%;
+  background-color: white;
+  margin-top: 20px;
+}
+
+#form #champs2 td {
+  border: 1px solid #e5e5e5;
+}
+
+#form #champs2 #transparent {
+  border: 1px solid white;
+  background-color: #f8fbfe;
+  padding-top: 15px;
+  padding-bottom: -15px;
+}
+#form #champs {
+  background-color: #f8fbfe;
+}
+
+#form #champs #reponse {
+  text-align: center;
+}
+#form ul {
+  list-style: none;
+  border: 1.5px solid #9b9b9b;
+  background-color: rgb(255, 255, 255);
+  width: 190px;
+  text-align: center;
+  float: left;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+#form li:hover {
+  color: black;
+  background: #c5c5c5;
+}
 
 .button_pdf_2 {
   text-align: center;
   top: 150px;
   margin-bottom: 40px;
-}
-.button_pdf_1 {
 }
 .container_pdf {
   position: absolute;
@@ -65,33 +146,31 @@ h1 {
   background-color: #bd1d42;
 }
 
-/* #forms {
-  display: flex;
-  width: 50%;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid #d4d4d4;
-  padding: 20px;
-} */
-/* .jour_form {
-  text-align: left;
-}
-.mg_form {
-  text-align: right;
-  padding-right: 9px;
-}
-#new {
-  padding-bottom: 10px;
-}
-#modif {
-  display: flex;
-  margin-left: 115%;
-  text-align: center;
-}
-.ancien_medicament {
-  pointer-events: none;
-} */
+/* for the form*/
 
+/* for the preview*/
+#container_preview {
+  border: 1px solid rgb(179, 177, 177);
+  background-color: #f8fbfe;
+  border-radius: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+#preview table {
+  width: 100%;
+  background-color: white;
+  margin-top: 20px;
+}
+
+#preview #table_medic #transparent {
+  background-color: #f8fbfe;
+}
+/* for the preview*/
+
+/* pour les bouton*/
 #new_table_btn,
 .modify_btn {
   background-color: #00a8d6;
@@ -113,7 +192,6 @@ h1 {
 #table_medic {
   margin-bottom: 20px;
   margin-top: 40px;
-  margin-left: 32%;
 }
 .red_btn {
   background: #c73154;
@@ -125,36 +203,10 @@ input:focus {
   border-color: black;
   outline: none;
 }
+/* pour les bouton*/
 
-/* for the form */
+/* pour les input*/
 
-/* for the cross */
-/* .close {
-  position: absolute;
-  opacity: 0.3;
-}
-.close:hover {
-  opacity: 1;
-}
-.close:before,
-.close:after {
-  position: absolute;
-  left: 10px;
-  top: 7px;
-  content: " ";
-  height: 10px;
-  width: 2px;
-  background-color: #333;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
-} */
-/* for the cross */
-
-/* button */
 input[type="button"],
 input[type="submit"] {
   cursor: pointer;
@@ -164,13 +216,14 @@ input[type="submit"] {
   border: 1px grey;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
-/* button */
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="mail"] {
   height: 25px;
   border: 1.5px solid #9b9b9b;
   padding: 5px;
+  border-radius: 5px;
 }
 
 input[type="checkbox"] {
@@ -178,6 +231,10 @@ input[type="checkbox"] {
   width: 15px;
   border: none;
 }
+
+/* pour les input*/
+
+/* autocomplete */
 
 .autocomplete-suggestions {
   -webkit-box-sizing: border-box;
@@ -198,11 +255,7 @@ input[type="checkbox"] {
 .autocomplete-selected {
   background: rgb(224, 224, 224);
 }
-#block {
-  z-index: 2;
-  position: absolute;
-  padding-left: 106px;
-}
+
 #reponse {
   text-align: center;
 }
@@ -220,3 +273,5 @@ li:hover {
   color: black;
   background: #c5c5c5;
 }
+
+/* autocomplete */

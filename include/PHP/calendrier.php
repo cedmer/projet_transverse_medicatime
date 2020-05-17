@@ -10,7 +10,7 @@ include "tab_preview.php";
     <link rel="icon" type="image/png" href="../../images/logo_medicatime.png" />
     <link href="../CSS/style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style_Mainpage.css">
+    <link rel="stylesheet" href="../CSS/style_mainpage.css">
 </head>
 
 
