@@ -69,6 +69,13 @@ include "tab_preview.php";
 
                     </table>
                 </div>
+                <div class="container_pdf">
+                    <div class=" col-md-10" class="button_pdf_1">
+                        <form action="pdf_generator_client.php" method="post">
+                            <input type="submit" value="pdf" id="pdf_2">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
