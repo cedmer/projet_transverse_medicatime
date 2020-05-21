@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 21 mai 2020 à 15:20
+-- Généré le :  sam. 16 mai 2020 à 14:17
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `medicament` (
   `mid` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `medicament`
@@ -41,14 +41,7 @@ CREATE TABLE IF NOT EXISTS `medicament` (
 
 INSERT INTO `medicament` (`mid`, `nom`) VALUES
 (1, 'Doliprane'),
-(2, 'Smecta'),
-(4, 'Desloratadine'),
-(5, 'Suprane'),
-(6, 'Prezista'),
-(7, 'Daptomycine'),
-(8, 'Cytarabine'),
-(9, 'Deferasirox'),
-(10, 'Diosmectite');
+(2, 'paracetamol');
 
 -- --------------------------------------------------------
 
@@ -89,6 +82,18 @@ CREATE TABLE IF NOT EXISTS `tableau` (
   `dosage` varchar(255) NOT NULL,
   PRIMARY KEY (`tid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `tableau`
+--
+
+INSERT INTO `tableau` (`tid`, `medicament`, `jour`, `heure`, `dosage`) VALUES
+(4, 'Doliprane', '2', '8', '500'),
+(3, 'Doliprane', '1', '8', '500'),
+(5, 'Doliprane', '3', '8', '500'),
+(6, 'Doliprane', '1', '20', '500'),
+(7, 'Doliprane', '2', '20', '500'),
+(8, 'Doliprane', '3', '20', '500');
 
 -- --------------------------------------------------------
 

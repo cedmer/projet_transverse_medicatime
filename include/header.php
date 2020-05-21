@@ -8,7 +8,7 @@ try {
 ?>
 
 <div>
-	<a href="medicatime.php">
+	<a>
 		<img class="hvr-bob" id="logo" src="../../images/logo_medicatime.png">
 	</a>
 </div>
@@ -18,6 +18,7 @@ try {
 	<?php
 	if (isset($_SESSION['admin'])) :
 	?>
+		<a href="medicatime.php" id="linkstyle"> Home </a>
 		<a href="inscription.php" id="linkstyle"> Inscription </a>
 		<a href="aide.php" id="linkstyle"> Aide </a>
 		<a href="logout.php" id="linkstyle">Déconnexion</a>
@@ -33,6 +34,7 @@ try {
 
 	?>
 		<a id="linkstyle" href="calendrier.php">Mon calendrier</a>
+		<a id="linkstyle" href="contact.php">Contact</a>
 		<a id="linkstyle" href="logout.php">Déconnexion</a>
 	<?php
 	else :
