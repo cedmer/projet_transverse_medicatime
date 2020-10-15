@@ -1,5 +1,5 @@
 
----------------------------------------------------------------------------MEDICATIME----------------------------------------------------------------------------------------------
+MEDICATIME
 
 Dans le cadre d'un projet transverse à l'école d'ingénieur généraliste en informatique EFREI PARIS, Medicatime est un site dont la fonctionnalité principale est la création d'un  calendrier personnalisable à destination des médecins pour les patients. 
 
