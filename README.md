@@ -1,17 +1,12 @@
-Projet Transverse S6
 
-Voilà le repository où on pourra travailler le projet transverse !
+---------------------------------------------------------------------------MEDICATIME----------------------------------------------------------------------------------------------
 
-Utilisez GitKraken pour toutes les opérations concernant le projet. Quelques commandes utiles :
+Dans le cadre d'un projet transverse à l'école d'ingénieur généraliste en informatique EFREI PARIS, Medicatime est un site dont la fonctionnalité principale est la création d'un  calendrier personnalisable à destination des médecins pour les patients. 
 
-1°) Chaque fois que vous lancez le projet, cliquez sur "pull" en haut
--> Cela met à jour votre dossier avec ce que les autres ont modifiés pendant votre abscence et évite  les conlflits de modifications !
+Ce calendrier format papier ou pdf vise à rappeler les patients pour la prise de médicament. 
 
-2°) Quand vous voulez enregistrer des modifs : 
-	a°) cliquez sur "View change" en haut à droite
-	b°) Chosissez les modifs à enregistrer, soit avec "Stage all changes" soit en choississant vos modifs une à une avec les "Stage File"
-	c°) Nommez votre commit et cliquez sur "Commit changes" en bas à doite
+Ce projet a été effectué avec 5 personnes sur 6 mois à partir de janvier 2020 à partir d'un projet prototype effectué l'année d'avant.
 
-3°) Quand vous avez terminez, n'oubliez pas de cliquer sur "Push" en haut pour envoyer vos modifications, sinon elles resteront en local !
+Le projet devait être dans un but final en relation avec la deuxième partie du projet sous forme de pillulier connecté. 
 
-Oui
+Les langages utilisés sont : HTML, CSS, PHP, SQL
